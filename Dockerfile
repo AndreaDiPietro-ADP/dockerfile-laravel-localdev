@@ -10,6 +10,8 @@ RUN apt-get -y update \
 		libzip-dev \
 		libxslt1-dev \
 		default-mysql-client \
+		zip \
+		unzip \
 	&& docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd \
 	&& docker-php-ext-install bcmath \

@@ -1,4 +1,4 @@
-FROM php:8.0
+FROM php:8.1.3
 
 # default-mysql-client for "php artisan db" command (needs "mysql" command of mysql client)
 RUN apt-get -y update \

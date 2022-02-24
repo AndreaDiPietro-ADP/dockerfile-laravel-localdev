@@ -35,13 +35,13 @@ docker run --name laravel_my_blog -d -p 9080:8000 -e DB_CONNECTION=sqlite -v ${P
 Simply open a terminal inside the running container
 
 ```sh
-docker exec -it CONTAINER bash
+docker exec -it CONTAINER bash -l
 ```
 
 For example:
 
 ```sh
-docker exec -it laravel_my_blog bash
+docker exec -it laravel_my_blog bash -l
 ```
 
 ### Docker Compose Example

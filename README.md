@@ -9,25 +9,25 @@ Useful to have a development environment for Laravel without the need to install
 ### How to create a Laravel project using the **docker run** command inside a folder of the Docker host machine
 
 ```sh
-docker run --rm -v HOST_DIRECTORY_FULLPATH:/laravel_app --entrypoint '/bin/bash' andreadipietro/laravel-local-dev:php8.0 -c 'composer create-project laravel/laravel /laravel_app'
+docker run --rm -v HOST_DIRECTORY_FULLPATH:/laravel_app --entrypoint '/bin/bash' andreadipietro/laravel-local-dev:php8.1.3 -c 'composer create-project laravel/laravel /laravel_app'
 ```
 
 For example, the creation of a Laravel project inside a folder named _**my_blog**_ ( HOST_DIRECTORY_FULLPAT=${PWD}/my_blog ):
 
 ```sh
-docker run --rm -v ${PWD}/my_blog:/laravel_app --entrypoint '/bin/bash' andreadipietro/laravel-local-dev:php8.0 -c 'composer create-project laravel/laravel /laravel_app'
+docker run --rm -v ${PWD}/my_blog:/laravel_app --entrypoint '/bin/bash' andreadipietro/laravel-local-dev:php8.1.3 -c 'composer create-project laravel/laravel /laravel_app'
 ```
 
 ### How to create a container running an existent Laravel project
 
 ```sh
-docker run --name CONTAINER_NAME -d -p PORT:8000 -v HOST_DIRECTORY_FULLPAT:/laravel_app andreadipietro/laravel-local-dev:php8.0
+docker run --name CONTAINER_NAME -d -p PORT:8000 -v HOST_DIRECTORY_FULLPAT:/laravel_app andreadipietro/laravel-local-dev:php8.1.3
 ```
 
 For example:
 
 ```sh
-docker run --name laravel_my_blog -d -p 9080:8000 -e DB_CONNECTION=sqlite -v ${PWD}/my_blog:/laravel_app andreadipietro/laravel-local-dev:php8.0
+docker run --name laravel_my_blog -d -p 9080:8000 -e DB_CONNECTION=sqlite -v ${PWD}/my_blog:/laravel_app andreadipietro/laravel-local-dev:php8.1.3
 ```
 
 ### How to execute Artisan, Composer and Node commands
@@ -69,7 +69,7 @@ services:
       - laravel_my_blog_nt
 
   blog:
-    image: andreadipietro/laravel-local-dev:php8.0
+    image: andreadipietro/laravel-local-dev:php8.1.3
     container_name: laravel_my_blog
     deploy:
       restart_policy:
